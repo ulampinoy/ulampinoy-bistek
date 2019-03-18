@@ -2,14 +2,18 @@ baseURL = "https://ulampinoy.com/"
 languageCode = "en-us"
 title = "Ulampinoy Atbp."
 
- [[menu.main]]
 
- [[menu.main]]
-  name = "About"
-  url  = "/about/"
-  weight = 0
+[[menu.main]]
+name = "Video Recipes"
+url  = "/videos/"
+weight = 5
 
- [[menu.main]]
-  name = "Blog"
-  url  = "/posts/"
-  weight = 5
+[[menu.main]]
+name = "Blog"
+url  = "/posts/"
+weight = 10
+
+[[menu.main]]
+name = "About"
+url  = "/about/"
+weight = 0
