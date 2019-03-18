@@ -1,0 +1,35 @@
+{{ $featured_image := .Params.featured_image }}
+{{ $description := .Params.description }}
+<article class="post-preview">
+  <div class="flex flex-column">
+    {{ if .Params.featured_image }}
+    {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+    {{ $featured_image := (trim $featured_image "/") | absURL }}
+    <div class="flex">
+      <a href="{{.URL}}">
+        <div class="post-preview-image">
+          <img
+            src="{{ $featured_image }}"
+            class="img"
+            alt="image from {{ .Title }}"
+          />
+        </div>
+      </a>
+    </div>
+    {{ end }}
+    <div class="w-100{{ if .Params.featured_image }}{{ end }}">
+      <div class="whetter">{{ .Params.whetter }}</div>
+      <h2>
+        <a href="{{.URL}}" class="color-inherit link">
+          {{ .Title }}
+        </a>
+      </h2>
+      <p>
+        {{ $description }}
+      </p>
+      {{/* TODO: add author
+      <p class="f6 lh-copy mv0">By {{ .Author }}</p>
+      */}}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,57 @@
+.wrapper {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 2rem;
+  }
+  .grid {
+    display: grid;
+  }
+  
+  .grid-Home {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3rem;
+  }
+  
+  .grid-Home {
+    display: grid;
+    grid-template-areas: "bb" "card" "foot";
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+  @media only screen and (min-width: 480px) and (max-width: 960px) {
+    .grid-Home {
+      grid-template-areas: "bb bb" "card card" "foot foot";
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+    }
+  }
+  @media only screen and (min-width: 960px) {
+    .grid-Home {
+      grid-template-areas: "bb bb bb" "card card card" "foot foot foot";
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 3rem;
+    }
+  }
+  .grid-Home > article:first-child {
+    grid-area: bb;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .grid-Home > article:first-child .post-preview-image {
+    max-height: 64vh;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .grid-Home > article:first-child h2 {
+    font-size: 2.7em;
+    margin-bottom: 0.5rem;
+  }
+  .grid-Home > article:first-child .whetter {
+    font-size: 0.8rem;
+  }
+  .grid-Home > article:first-child p {
+    font-size: 1.6em;
+  }
+  

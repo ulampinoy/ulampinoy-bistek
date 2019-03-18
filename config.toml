@@ -1,7 +1,6 @@
 baseURL = "https://ulampinoy.com/"
 languageCode = "en-us"
 title = "Ulampinoy Atbp."
-theme = "ananke"
 
  [[menu.main]]
 

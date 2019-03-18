@@ -1,0 +1,29 @@
+{{ $featured_image := .Params.featured_image }}
+{{ $description := .Params.description }}
+<article>
+  <div class="">
+    <div class="flex flex-column">
+      {{ if .Params.featured_image }}
+          {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+        {{ $featured_image := (trim $featured_image "/") | absURL }}
+        <div class="">
+          <a href="{{.URL}}" class="db grow">
+            <img src="{{ $featured_image }}" class="img" alt="image from {{ .Title }}">
+          </a>
+        </div>
+      {{ end }}
+      <div class="blah w-100{{ if .Params.featured_image }} w-60-ns pl3-ns{{ end }}">
+        <h2 class="f3 fw1 athelas mt0 mb1 lh-title">
+          <a href="{{.URL}}" class="color-inherit dim link">
+            {{ .Title }}
+            </a>
+        </h2>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          {{ $description }}
+        </div>
+        {{/* TODO: add author
+        <p class="f6 lh-copy mv0">By {{ .Author }}</p> */}}
+      </div>
+    </div>
+  </div>
+</article>
